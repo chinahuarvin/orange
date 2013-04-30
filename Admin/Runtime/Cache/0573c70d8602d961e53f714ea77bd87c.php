@@ -1,4 +1,4 @@
-<layout name="Public:header" cache="60" />
+<?php if (!defined('THINK_PATH')) exit();?><!-- layout::Public:header::60 -->
 <!-- start page -->
 <div id="page">
 	<!-- start sidebar -->
@@ -86,4 +86,4 @@
 	<br style="clear: both;" />
 </div>
 <!-- end page -->
-<layout name="Public:footer" cache="60" />
+<!-- layout::Public:footer::60 -->
