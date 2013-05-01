@@ -162,6 +162,35 @@ a:hover {
 }
 
 
+/* Search */
+
+#search {
+	padding: 20px 30px 40px 30px;
+}
+
+#search input {
+	padding: 0;
+	width: 70px;
+	height: 29px;
+	background: #DFDFDF url(./images/img14.gif) repeat-x;
+	font-weight: bold;
+}
+
+#search #s {
+	padding: 5px;
+	width: 150px;
+	height: auto;
+	background: #FEFEFE url(./images/img13.gif) repeat-x;
+	border: 1px solid #626262;
+	font: normal 1em Arial, Helvetica, sans-serif;
+}
+
+#search br {
+	display: none;
+}
+
+
+
 /* Footer */
 
 #footer {
