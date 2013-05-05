@@ -106,7 +106,13 @@
 		<div class="barfoot"></div>
 	</div>
 	<div class="center">
-		测测你的能力哈
+		<div>这是试卷{$id}</div>
+		<volist name="arr" id="vo" key="key">
+		<div class="question">
+			<div>{$vo.type}</div>
+			<div>{$vo.question}</div>
+		</div>
+		</volist>
 	</div>
 </div>
 <layout name="Public:footer" cache="60" />
