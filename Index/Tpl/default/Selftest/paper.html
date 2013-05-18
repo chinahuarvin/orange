@@ -1,8 +1,25 @@
 <layout name="Public:header" cache="60" />
-<div id="content">
-	<div class="bread">
-		<span><a href="__APP__/Index">首页</a></span> &gt;&gt; <span class="currentmodel">自我自测</span>
+<link href="__PUBLIC__/Index/Css/selftest.css" rel="stylesheet" type="text/css" media="screen" />
+<div id="menu">
+	<div id="nav-left">
+		<div id="nav-right">
+			<table>
+				<tr>
+					<td class="nav-td"><a href="__APP__/Index">首页</a></td>
+					<td class="nav-td"><a href="__APP__/Wonderful">精华主题</a></td>
+					<td class="nav-td"><a href="__APP__/Dynamic">实时动态</a></td>
+					<td class="nav-td"><a href="__APP__/Technology">技术分享</a></td>
+					<td class="nav-td"><a href="__APP__/Bbs">你问我答</a></td>
+					<td class="nav-td selected-td"><a href="__APP__/Selftest">技术自测</a></td>
+					<td class="nav-td"><a href="__APP__/Download">资料下载</a></td>
+					<td class="nav-td"><a href="__APP__/Soulsoup">心灵鸡汤</a></td>
+					<td class="nav-td"><a href="__APP__/English">英语分享</a></td>
+				</tr>
+			</table>
+		</div>
 	</div>
+</div>
+<div id="content">
 	<div class="left bar">
 		<div class="barhead">自我自测</div>
 		<ul>
@@ -106,11 +123,25 @@
 		<div class="barfoot"></div>
 	</div>
 	<div class="center">
+		<div class="bread">
+			<span><a href="__APP__/Index">首页</a></span> &gt;&gt; <span class="currentmodel">自我自测</span>
+		</div>
 		<div>这是试卷{$id}</div>
 		<volist name="arr" id="vo" key="key">
 		<div class="question">
-			<div>{$vo.type}</div>
-			<div>{$vo.question}</div>
+			<div>{$vo.typeStr}</div>
+			<if condition="$vo['type'] eq 1">
+			<div>
+				<volist name="vo.question" id="qt" key="qtkey">
+					<div><span>{$qt.num}.</span><span>{$qt.title}</span></div>
+					<div class="options">
+						<volist name="qt.options" id="o">
+							<div><input type="checkbox"/><span>{$o[0]}、</span><span>{$o[1]}</span></div>
+						</volist>
+					</div>
+				</volist>
+			</div>
+			</if>
 		</div>
 		</volist>
 	</div>

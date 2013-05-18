@@ -1,21 +1,75 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html;"/>
-	<link rel="stylesheet" href="__PUBLIC__/Css/common.css" type="text/css" />
-	<title></title>
-</head>
-<body>
-	<frameset rows="50,*" cols="*" frameborder="no" border="0" framespacing="0">
-	  <frame src="__URL__/topframe" name="topFrame" frameborder="no" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
-	  <frameset name="myFrame" cols="199,7,*" frameborder="no" border="0" framespacing="0">
-	    <frame src="__URL__/leftframe" name="leftFrame" frameborder="no" scrolling="No" noresize="noresize" id="leftFrame" title="leftFrame" />
-		<frame src="__URL__/switchframe" name="midFrame" frameborder="no" scrolling="No" noresize="noresize" id="midFrame" title="midFrame" />
-	    <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
-		 <frame src="__URL__/mainframe" name="mainFrame" frameborder="no" scrolling="No"  noresize="noresize" id="mainFrame" title="mainFrame" />
-		 <frame src="__URL__/manframe" name="manFrame" frameborder="no" id="manFrame" title="manFrame" />
-	     </frameset>
-	  </frameset>
-</frameset>
-</body>
+<html>
+	<head>
+		<script src="__PUBLIC__/Admin/Scripts/jquery-1.6.2.min.js"></script>
+		<script src="__PUBLIC__/Admin/Scripts/miniui.js"></script>
+		<link href="__PUBLIC__/Admin/Css/miniui.css" rel="stylesheet" type="text/css" media="screen" />
+	</head>		
+ 	<body style="margin:0">
+        <div id="layout1" class="mini-layout" style="width:100%;height:100%;">
+            <div class="header" region="north" height="100px" showSplit="false" showHeader="false" style="background-color:rgb(235,237,241)">
+                <div style="float:left;margin-left:10px">
+                    <h1>Orange后台管理系统</h1>
+                </div>
+                <div style="float:right;margin-right:20px;margin-top:10px">
+                    <a target="_self" href="../index.php" style="font-size:12px;cursor:pointer">切换到前台</a>
+                    <a target="_self" href="../index.php?a=logout" style="font-size:12px;cursor:pointer">退出</a>
+                </div>
+            </div>
+            <div title="south" region="south" showSplit="false" showHeader="false" height="30" ></div>
+            <div title="center" region="center" bodyStyle="overflow:hidden;">    
+                <!--Splitter-->
+                <div class="mini-splitter" style="width:100%;height:100%;" borderStyle="border:0;">
+                    <div size="180" maxSize="250" minSize="100" showCollapseButton="true">
+                        <!--页面左侧导航树-->
+                        <div id="leftTree" class="mini-outlooktree" url="__PUBLIC__/Admin/Scripts/nav.json" onnodeselect="onNodeSelect" textField="text" idField="id" parentField="pid">
+                        </div>
+                    </div>
+                    <div showCollapseButton="false">
+                        <!--Tabs-->
+                        <div id="mainTabs" class="mini-tabs bg-toolbar" activeIndex="0" style="width:100%;height:100%;padding-bottom:20px"> 
+                            <div title="首页"> 
+                                <!---绝对定位的Div,用于刷新页面-->  
+                                <div  style="position:absolute;top:10px;left:1030px;font-size:16x;">
+                                    <div style="width:76px;height:22px;border-bottom:1px solid rgb(159,159,159);text-align: center">
+                                        <span id ="refresh" style="color:red;font-size:18px;cursor:pointer;" onclick="refresh()"  onmouseover="mouseonover('refresh')" onmouseout="mouseonout('refresh')">刷新页面</span>
+                                    </div>
+                                </div>
+
+                                <div style="padding:20px;font-size:15px">
+                                    <span style="font-weight:bold">总计：大类<?=$bigNumber?>个,中类<?=$middleNumber?>个,小类<?=$smallNumber?>个</span><br/>
+
+                                    <!--首页-->
+                                    <script>
+                                        function showTab(node) {
+                                            var tabs = mini.get("mainTabs");            
+                                            var id = "tab$" + node.id;
+                                            var tab = tabs.getTab(id);
+                                            if (!tab) {
+                                                tab = {};
+                                                tab.name = id;
+                                                tab.title = node.text;
+                                                tab.showCloseButton = true;
+                                                tab.url = node.url;
+                                                tabs.addTab(tab);
+                                            }
+                                            tabs.activeTab(tab);
+                                        }        
+
+                                        function onNodeSelect(e) {
+                                            var node = e.node;
+                                            var isLeaf = e.isLeaf;            
+
+                                            if (isLeaf) {
+                                                showTab(node);
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -6,7 +6,7 @@
 // 定义ThinkPHP框架路径
 define('THINK_PATH', '../ThinkPHP');
 //定义项目名称和路径
-define('APP_NAME', 'Index');
+define('APP_NAME', 'Admin');
 define('APP_PATH', '.');
 
 define('NO_CACHE_RUNTIME', true);

@@ -1,0 +1,37 @@
+[
+    {id: "blog", text: "技术文章(BLOG)"},
+    {id: "blog1", text: "技术文章小模块1", pid: "blog",url:"./index.php/Blog/model1"},
+    {id: "blog2", text: "技术文章小模块2", pid: "blog",url:"./index.php/Blog/model2"},
+    {id: "blog3", text: "技术文章小模块3", pid: "blog",url:"./index.php/Blog/model3"},
+
+
+    {id: "bbs", text: "你问我答(BBS)"},
+    {id: "bbs1", text: "你问我答小模块1", pid: "bbs",url:"./index.php/Bbs/model1"},
+    {id: "bbs2", text: "你问我答小模块2", pid: "bbs",url:"./index.php/Bbs/model2"},
+    {id: "bbs3", text: "你问我答小模块3", pid: "bbs",url:"./index.php/Bbs/model3"},
+
+    {id: "download", text: "资料下载(DOWNLOAD)"},
+    {id: "download1", text: "资料下载小模块1", pid: "download",url:"./index.php/DownLoad/model1"},
+    {id: "download2", text: "资料下载小模块2", pid: "download",url:"./index.php/DownLoad/model2"},
+    {id: "download3", text: "资料下载小模块3", pid: "download",url:"./index.php/DownLoad/model3"},
+
+    {id: "soulsoup", text: "心灵鸡汤(SOULSOUP)"},
+    {id: "soulsoup1", text: "心灵鸡汤小模块1", pid: "soulsoup",url:"./index.php/SoulSoup/model1"},
+    {id: "soulsoup2", text: "心灵鸡汤小模块2", pid: "soulsoup",url:"./index.php/SoulSoup/model2"},
+    {id: "soulsoup3", text: "心灵鸡汤小模块3", pid: "soulsoup",url:"./index.php/SoulSoup/model3"},
+
+    {id: "english", text: "英语(ENGLISH)"},
+    {id: "english1", text: "英语小模块1", pid: "english",url:"./index.php/English/model1"},
+    {id: "english2", text: "英语小模块2", pid: "english",url:"./index.php/English/model2"},
+    {id: "english3", text: "英语小模块3", pid: "english",url:"./index.php/English/model3"},
+
+    {id: "selftest", text: "自测(SELFTEST)"},
+    {id: "selftest1", text: "自测小模块1", pid: "selftest",url:"./index.php/SelfTest/model1"},
+    {id: "selftest2", text: "自测小模块2", pid: "selftest",url:"./index.php/SelfTest/model2"},
+    {id: "selftest3", text: "自测小模块3", pid: "selftest",url:"./index.php/SelfTest/model3"},
+
+    {id: "user", text: "用户管理(USER)"},
+    {id: "user1", text: "用户管理小模块1", pid: "user",url:"./index.php/User/model1"},
+    {id: "user2", text: "用户管理小模块2", pid: "user",url:"./index.php/User/model2"},
+    {id: "user3", text: "用户管理小模块3", pid: "user",url:"./index.php/User/model3"}
+]
